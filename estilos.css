@@ -1,4 +1,4 @@
-/* Estilos generales del proyecto TRAPPIST-1E */
+/* Estilo general para modificar tonos en general */
 :root {
   --navy: #172a3a;
   --navy-2: #20394d;
@@ -178,7 +178,7 @@ tbody tr:nth-child(even) td { background: #f2f6f9; }
 }
 
 
-/* Navegación doble: barra principal visible y menú alternativo superpuesto */
+/* Estilo de las dos barras de navegar */
 .header { position: relative; z-index: 20; }
 .menu-btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -208,7 +208,7 @@ tbody tr:nth-child(even) td { background: #f2f6f9; }
   color: #fff; background: #49647b;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.28);
 }
-/* El diseño conserva el contenido original, ahora sin una tercera navegación lateral. */
+/* Estilo de la tercera barra */
 .layout { display: block; min-height: auto; }
 .main { max-width: 1180px; margin: 0 auto; }
 .ticker { margin: 12px auto 0; max-width: 1180px; border-radius: 7px; }
@@ -228,8 +228,8 @@ tbody tr:nth-child(even) td { background: #f2f6f9; }
 }
 
 
-/* === Ajustes finales de navegación adaptable === */
-/* La primera barra queda fija visualmente bajo el encabezado y ocupa todo el ancho. */
+/* === Adaptar a varios dispositivos === */
+/* La primera barra de navegar */
 .header {
   position: relative;
   z-index: 70;
@@ -268,7 +268,7 @@ tbody tr:nth-child(even) td { background: #f2f6f9; }
   box-shadow: inset 0 -2px #b8d2e5;
 }
 
-/* El botón permanece accesible por encima del velo de desenfoque. */
+/* Boton de menu */
 .menu-btn {
   position: relative;
   z-index: 75;
@@ -283,7 +283,7 @@ tbody tr:nth-child(even) td { background: #f2f6f9; }
   outline-offset: 3px;
 }
 
-/* Segunda navegación: ventana flotante lateral, translúcida y desenfocada. */
+/* Segunda barra de navegar */
 .topbar {
   display: none;
   position: fixed;
@@ -328,7 +328,7 @@ tbody tr:nth-child(even) td { background: #f2f6f9; }
   from { opacity: 0; transform: translateY(-7px) scale(.985); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
-/* Oscurece y desenfoca el contenido de fondo; la ventana y el botón quedan por encima. */
+/* Estilo del menu */
 body.menu-open::before {
   content: "";
   position: fixed;
@@ -340,13 +340,13 @@ body.menu-open::before {
   pointer-events: none;
 }
 
-/* Los botones secundarios también deben conservar texto blanco. */
+/* Los botones secundarios tonos */
 a.btn, a.btn:visited, button.btn, .btn.secondary,
 .btn:hover, .btn:focus, .btn:active {
   color: #fff !important;
 }
 
-/* Las marquesinas conservan su estilo y quedan justo debajo de la navegación normal. */
+/* Las marquesinas */
 .ticker {
   display: block;
   width: min(1180px, calc(100% - 28px));
