@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Características y datos de TRAPPIST-1E.">
+  <title>TRAPPIST-1E | Contenido principal</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html"><span class="planet-icon" aria-hidden="true">🪐</span><span><b>TRAPPIST-1E</b><small>NUEVO MUNDO</small></span></a>
+    <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-alterno" onclick="toggleMenu()">☰</button>
+  </header>
+  <nav class="topbar" id="menu-alterno" aria-label="Menú alternativo">
+    <a href="index.html">Inicio</a>
+    <a href="contenido.html" class="active" aria-current="page">Contenido</a>
+    <a href="informacion.html">Información</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+<nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a class="active" aria-current="page" href="contenido.html">Contenido</a><a href="informacion.html">Información</a><a href="contacto.html">Contacto</a></nav>
+  <marquee class="ticker" behavior="scroll" direction="right" scrollamount="3">✦ Un exoplaneta es un planeta que orbita una estrella distinta del Sol. ✦</marquee>
+  <div class="layout">
+    <main class="main">
+      <header class="section-heading"><p class="eyebrow">CONOCE EL PLANETA</p><h1>Contenido principal</h1><p>Explora la información más relevante sobre TRAPPIST-1E.</p></header>
+      <section class="card-grid">
+        <article class="card"><div class="card-icon">◎</div><h2>Planeta</h2><p>TRAPPIST-1E es un planeta rocoso con un tamaño parecido al de la Tierra. Forma parte de un sistema con siete planetas conocidos.</p></article>
+        <article class="card"><div class="card-icon">♧</div><h2>Habitabilidad</h2><p>Se encuentra en la zona habitable de su estrella. Esto significa que, bajo ciertas condiciones atmosféricas, podría existir agua líquida en su superficie.</p></article>
+        <article class="card"><div class="card-icon">▤</div><h2>Datos científicos</h2><p>Su sistema se encuentra aproximadamente a 39 años luz. Ha sido estudiado con telescopios espaciales y observatorios terrestres.</p></article>
+      </section>
+
+      <section class="comparison">
+        <h2>Comparación general: TRAPPIST-1E y la Tierra</h2>
+        <p class="muted">Tabla informativa con encabezados, filas, columnas y celdas combinadas.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>Características generales de ambos mundos</caption>
+            <thead>
+              <tr><th rowspan="2" scope="col">Característica</th><th colspan="2" scope="colgroup">Planetas</th></tr>
+              <tr><th scope="col">TRAPPIST-1E</th><th scope="col">Tierra</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Tipo</th><td>Rocoso</td><td>Rocoso</td></tr>
+              <tr><th scope="row">Ubicación</th><td>Sistema TRAPPIST-1</td><td>Sistema Solar</td></tr>
+              <tr><th scope="row">Zona habitable</th><td>Sí, respecto a su estrella</td><td>Sí, respecto al Sol</td></tr>
+              <tr><th scope="row">Posibilidad de agua líquida</th><td colspan="2">Depende de las condiciones de la superficie y de la atmósfera de cada planeta.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="feature-panel">
+        <img src="imagenes/planeta2.jpg" alt="Ilustración de TRAPPIST-1E">
+        <div><h2>Información importante</h2><p>TRAPPIST-1E tiene un tamaño similar al de la Tierra y es uno de los candidatos de su sistema que se estudian para comprender las condiciones de habitabilidad. Su posible atmósfera y las características de su superficie todavía son temas de investigación.</p><a class="btn" href="index.html">← Regresar</a><a class="btn secondary" href="informacion.html">Siguiente →</a></div>
+      </section>
+      <footer class="page-footer">Proyecto escolar · TRAPPIST-1E</footer>
+    </main>
+  </div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu-alterno');
+  const button = document.querySelector('.menu-btn');
+  const abierto = menu.classList.toggle('abierto');
+  document.body.classList.toggle('menu-open', abierto);
+  button.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+}
+function closeMenu() {
+  const menu = document.getElementById('menu-alterno');
+  const button = document.querySelector('.menu-btn');
+  if (!menu || !button) return;
+  menu.classList.remove('abierto');
+  document.body.classList.remove('menu-open');
+  button.setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('click', function(event) {
+  const menu = document.getElementById('menu-alterno');
+  const button = document.querySelector('.menu-btn');
+  if (menu && button && !menu.contains(event.target) && !button.contains(event.target)) {
+    closeMenu();
+  }
+});
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') closeMenu();
+});
+</script>
+
+</body>
+</html>

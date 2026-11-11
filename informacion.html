@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Información adicional y curiosidades del sistema TRAPPIST-1.">
+  <title>TRAPPIST-1E | Información adicional</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html"><span class="planet-icon" aria-hidden="true">🪐</span><span><b>TRAPPIST-1E</b><small>NUEVO MUNDO</small></span></a>
+    <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-alterno" onclick="toggleMenu()">☰</button>
+  </header>
+  <nav class="topbar" id="menu-alterno" aria-label="Menú alternativo">
+    <a href="index.html">Inicio</a>
+    <a href="contenido.html">Contenido</a>
+    <a href="informacion.html" class="active" aria-current="page">Información</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+<nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="contenido.html">Contenido</a><a class="active" aria-current="page" href="informacion.html">Información</a><a href="contacto.html">Contacto</a></nav>
+  <marquee class="ticker" behavior="scroll" direction="left" scrollamount="4">✦ TRAPPIST-1 cuenta con siete planetas rocosos que siguen siendo estudiados por la ciencia. ✦</marquee>
+  <div class="layout">
+    <main class="main">
+      <header class="section-heading"><p class="eyebrow">MÁS POR DESCUBRIR</p><h1>Información adicional</h1><p>Datos curiosos y aspectos complementarios sobre TRAPPIST-1E.</p></header>
+      <section class="card-grid">
+        <article class="card"><div class="card-icon">★</div><h2>Curiosidad #1</h2><p>TRAPPIST-1 es un sistema que cuenta con siete planetas de tamaño terrestre, que orbitan una estrella enana roja.</p></article>
+        <article class="card"><div class="card-icon">♨</div><h2>Curiosidad #2</h2><p>La temperatura de un planeta depende de varios factores, entre ellos la energía que recibe de su estrella y las características de su atmósfera.</p></article>
+        <article class="card"><div class="card-icon">⌕</div><h2>Curiosidad #3</h2><p>El sistema TRAPPIST-1 se encuentra a unos 39 años luz de la Tierra, una distancia cercana en términos astronómicos.</p></article>
+      </section>
+      <section class="feature-panel">
+        <img src="imagenes/planeta1.jpg" alt="Representación artística del planeta TRAPPIST-1E">
+        <div><h2>Más información</h2><p>Los científicos continúan estudiando este planeta para conocer mejor su composición, su posible atmósfera, el clima y las condiciones que podrían existir en su superficie. Estas investigaciones ayudan a comprender qué hace habitable a un mundo.</p><a class="btn" href="contenido.html">← Regresar</a><a class="btn secondary" href="contacto.html">Siguiente →</a></div>
+      </section>
+      <footer class="page-footer">Proyecto escolar · TRAPPIST-1E</footer>
+    </main>
+  </div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu-alterno');
+  const button = document.querySelector('.menu-btn');
+  const abierto = menu.classList.toggle('abierto');
+  document.body.classList.toggle('menu-open', abierto);
+  button.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+}
+function closeMenu() {
+  const menu = document.getElementById('menu-alterno');
+  const button = document.querySelector('.menu-btn');
+  if (!menu || !button) return;
+  menu.classList.remove('abierto');
+  document.body.classList.remove('menu-open');
+  button.setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('click', function(event) {
+  const menu = document.getElementById('menu-alterno');
+  const button = document.querySelector('.menu-btn');
+  if (menu && button && !menu.contains(event.target) && !button.contains(event.target)) {
+    closeMenu();
+  }
+});
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') closeMenu();
+});
+</script>
+
+</body>
+</html>

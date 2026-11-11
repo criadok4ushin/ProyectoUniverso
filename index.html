@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyecto escolar sobre el exoplaneta TRAPPIST-1E.">
+  <title>TRAPPIST-1E | Inicio</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="TRAPPIST-1E, ir al inicio">
+      <span class="planet-icon" aria-hidden="true">🪐</span>
+      <span><b>TRAPPIST-1E</b><small>NUEVO MUNDO</small></span>
+    </a>
+    <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-alterno" onclick="toggleMenu()">☰</button>
+  </header>
+  <nav class="topbar" id="menu-alterno" aria-label="Menú alternativo">
+    <a href="index.html" class="active" aria-current="page">Inicio</a>
+    <a href="contenido.html">Contenido</a>
+    <a href="informacion.html">Información</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+<nav class="main-nav" aria-label="Navegación principal"><a class="active" aria-current="page" href="index.html">Inicio</a><a href="contenido.html">Contenido</a><a href="informacion.html">Información</a><a href="contacto.html">Contacto</a></nav>
+  <marquee class="ticker" behavior="scroll" direction="left" scrollamount="4">✦ Explora nuevos mundos: TRAPPIST-1E es uno de los planetas más interesantes para estudiar fuera del sistema solar. ✦</marquee>
+  <div class="layout">
+    <main class="main">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">EXPLORACIÓN ESPACIAL</p>
+          <h1>¿Puede el ser humano vivir en TRAPPIST-1E?</h1>
+          <p>TRAPPIST-1E es un exoplaneta que se encuentra a unos 39 años luz de la Tierra, en la constelación de Acuario. Es uno de los mundos que despiertan interés en la búsqueda de vida fuera de nuestro sistema solar por encontrarse en la zona habitable de su estrella.</p>
+          <a href="contenido.html" class="btn">Conocer más <span aria-hidden="true">→</span></a>
+        </div>
+        <figure>
+          <div class="image-frame"><img src="imagenes/planeta1.jpg" alt="Representación del exoplaneta TRAPPIST-1E"></div>
+          <figcaption>Imagen del planeta TRAPPIST-1E</figcaption>
+        </figure>
+      </section>
+
+      <section class="info-strip" aria-label="Datos del proyecto">
+        <div><span class="info-icon">♙</span><span><b>Creador</b><small>Eliel Guevara Cortés</small></span></div>
+        <div><span class="info-icon">🪐</span><span><b>Proyecto escolar</b><small>CBTIS 29</small></span></div>
+        <div><span class="info-icon">▦</span><span><b>Fecha</b><small>Octubre 2025</small></span></div>
+      </section>
+      <footer class="page-footer">Proyecto escolar · TRAPPIST-1E</footer>
+    </main>
+  </div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu-alterno');
+  const button = document.querySelector('.menu-btn');
+  const abierto = menu.classList.toggle('abierto');
+  document.body.classList.toggle('menu-open', abierto);
+  button.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+}
+function closeMenu() {
+  const menu = document.getElementById('menu-alterno');
+  const button = document.querySelector('.menu-btn');
+  if (!menu || !button) return;
+  menu.classList.remove('abierto');
+  document.body.classList.remove('menu-open');
+  button.setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('click', function(event) {
+  const menu = document.getElementById('menu-alterno');
+  const button = document.querySelector('.menu-btn');
+  if (menu && button && !menu.contains(event.target) && !button.contains(event.target)) {
+    closeMenu();
+  }
+});
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') closeMenu();
+});
+</script>
+
+</body>
+</html>
